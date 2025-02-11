@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -52,7 +53,7 @@ ROOT_URLCONF = 'taskmate.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [(os.path.join(BASE_DIR, 'taskmate\\templates')),],
+        'DIRS': [(os.path.join(BASE_DIR, "taskmate\\templates")),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,7 +82,6 @@ DATABASES = {
         'PORT': env('DJANGO_DB_PORT'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
